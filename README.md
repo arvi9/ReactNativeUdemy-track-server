@@ -1,4 +1,4 @@
 # ReactNativeUdemy-track-server
 
-1. command to start server - npm start dev
+1. command to start server - npm run dev
 2.
