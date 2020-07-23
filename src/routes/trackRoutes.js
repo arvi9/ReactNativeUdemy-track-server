@@ -1,19 +1,21 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const requireAuth = require("../middlewares/requireAuth");
+const requireAuth = require("../middlewares/requireAuth");
 
 const Track = mongoose.model("Track");
 
 const router = express.Router();
 
-// router.use(requireAuth);
+router.use(requireAuth);
 
+//GET - Tracks
 router.get("/tracks", async (req, res) => {
   const tracks = await Track.find({ userId: req.user._id });
 
   res.send(tracks);
 });
 
+//POST - Tracks
 router.post("/tracks", async (req, res) => {
   const { name, locations } = req.body;
 
